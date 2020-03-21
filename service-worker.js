@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.21d9945d7951fa4dbd58beb423ea742f.js"
+  "/precache-manifest.2f5dfa20685e00789a92332623fbec7e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pwatrial"});

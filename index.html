@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資源回收問答活動</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div style="width: 100%; height: 100%; background: linear-gradient(173.97deg, #E6F4FD 0%, #ADDEF8 23.68%, #ADDEF8 44.74%, #7ECEF4 73.16%, #A3D9EA 85%);">
+    <img src="./assets/img/bg_cloud.svg" class="bg-2">
+    <img src="./assets/img/bg_island.svg" class="bg-1">
+    <div class="row mx-0 pt-4 pl-2" style="align-items: center; justify-content: space-around; margin-bottom: 20px">
+        <img src="./assets/img/Logo.svg" class="logo" style="z-index: 1">
+        <div class="hint" style="z-index: 1; display: flex; flex-direction: column; justify-content: space-around">
+            <div class="row mx-0 mt-1" style="justify-content: center">
+                <img src="./assets/img/img_correct_num.svg" class="mt-1" style="width: 80%">
+            </div>
+            <div class="row px-3 mb-1 mx-0" style="justify-content: space-evenly">
+                <img src="./assets/img/img_right.svg">
+                <div class="correct-txt">
+                    <span id="count">0</span><span>/5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="question-panel panel-color-green">
+        <div id="instructionBanner" class="instruction-banner">
+            <img src="./assets/img/img_instruction.svg" class="banner-img">
+        </div>
+        <div id="questionBanner" class="question-banner" style="display: none">
+<!--            <img src="./assets/img/img_question_1.svg" class="banner-img">-->
+        </div>
+        <div id="instruction" class="content">
+            <div class="row mx-0 mt-2">
+                <img src="./assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
+                <div class="col-11 txt-1 red">
+                    金門縣環保局為回饋金門縣民特舉辦資源回收問答題宣導遊戲，需答對累積五題，即可填寫個人資料參加抽獎活動。
+                </div>
+            </div>
+            <div class="row mx-0 mt-2">
+                <img src="./assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
+                <div class="col-11 txt-1 green">
+                    注意：參加抽獎資格需為金門縣民(身分證字號開頭為W或戶籍地址位於金門縣)，不符合資格無法參加抽獎，主辦單位保有隨時修改及終止本活動之權利。
+                </div>
+            </div>
+            <div class="row mx-0 mt-3">
+                <div class="col txt-2 red" style="text-align: center">
+                    *必要時請提供相關身份佐證證明資料*
+                </div>
+            </div>
+            <div class="row mx-0 mt-4" style="justify-content: center">
+                <div id="start" class="btn-style btn-red start-btn">
+                    遊戲開始
+                </div>
+            </div>
+        </div>
+        <div id="question" class="content" style="display: none">
+            <div class="question row mx-0 mt-2">
+                <div class="col txt"></div>
+            </div>
+            <div class="row mx-0 mt-2">
+                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
+                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
+                    <div class="col-11 txt"></div>
+                </div>
+                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
+                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
+                    <div class="col-11 txt"></div>
+                </div>
+                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
+                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
+                    <div class="col-11 txt"></div>
+                </div>
+                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
+                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
+                    <div class="col-11 txt"></div>
+                </div>
+            </div>
+            <div class="row mx-0 mt-5" style="justify-content: center">
+                <div id="next" class="btn-style btn-green start-btn">
+                    確認
+                </div>
+            </div>
+        </div>
+        <div id="correct" class="content result-content" style="text-align: center; display: none">
+            <div class="correct-info correct-info-txt">
+                恭喜您～答對了
+            </div>
+            <div class="result-info-txt">
+                觀念很正確喔
+            </div>
+            <img src="./assets/img/img_right.svg" class="correct-icon">
+            <div class="row mx-0 mt-5" style="justify-content: center">
+                <div class="next btn-style btn-green start-btn">
+                    下一題
+                </div>
+            </div>
+        </div>
+        <div id="wrong" class="content result-content" style="text-align: center; display: none">
+            <div class="wrong-info correct-info-txt">
+                答錯了哦
+            </div>
+            <div class="result-info-txt">
+                觀念很正確喔
+            </div>
+            <img src="./assets/img/img_wrong.svg" class="wrong-icon">
+            <div class="row mx-0 mt-5" style="justify-content: center">
+                <div class="next btn-style btn-green start-btn">
+                    下一題
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="questionList.js"></script>
+<script type="text/javascript">
+    let question = {};
+    let correct = 0;
+
+    $('#start').on('click', function (e) {
+        $('.question-panel').addClass('panel-color-orange').removeClass('panel-color-green');
+        $('#instructionBanner').hide();
+        $('#instruction').hide();
+
+        $('#questionBanner').show();
+        $('#question').show();
+        question = randomSelect();
+        insertQuestion(question);
+    });
+
+    let select = -1;
+    $('.options > img').on('click', function (e) {
+        $(e.target).attr('src', './assets/img/img_checkbox_select.svg');
+        // $(e).target.src = './assets/img/img_checkbox_select.svg';
+        // console.log($(e.target).index());
+        const options = $('.options > img');
+        if (select >= 0) {
+            $(options[select]).attr('src', './assets/img/img_checkbox.svg');
+        }
+        select = options.index(e.target);
+    })
+
+    $('#next').on('click', function (e) {
+        if (select < 0) return;
+        if (select === question.ans - 1) {
+            $('#question').hide();
+            $('#questionBanner').hide();
+            $('#correct').show();
+            correct += 1;
+            $('#count').html(correct);
+        } else {
+            $('#question').hide();
+            $('#questionBanner').hide();
+            $('#wrong').show();
+            $('#wrong > .result-info-txt').html(question.desc);
+
+            wrongList.push(question);
+        }
+    })
+
+    $('.next').on('click', function (e) {
+        $('#correct').hide();
+        $('#wrong').hide();
+
+        $('#questionBanner').show();
+        $('#question').show();
+
+        $($('.options > img')[select]).attr('src', './assets/img/img_checkbox.svg');
+        select = -1;
+
+        question = randomSelect();
+        insertQuestion(question);
+    })
+
+    function insertQuestion(quz) {
+        $('#question > .question > .txt').html(quz.question);
+        $('#question > * > .options > .txt').each(function (idx, e) {
+            $(e).html(quz.options[idx]);
+        })
+        $('#questionBanner').html(`<img src="./assets/img/img_question_${quz.type}.svg" class="banner-img">`)
+    }
+</script>
+
+</body>
+</html>

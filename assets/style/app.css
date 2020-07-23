@@ -298,6 +298,10 @@ label {
         color: #FFFFFF;
     }
 
+    .form-desc {
+        padding: 0 14px;
+    }
+
     .for-content-txt {
         font-weight: bold;
         font-size: 20px;
@@ -511,14 +515,14 @@ label {
     }
 
     .correct-info {
-        min-width: 240px;
+        min-width: 230px;
         min-height: 45px;
         background: #D53C67;
         border-radius: 100px;
     }
 
     .wrong-info {
-        min-width: 240px;
+        min-width: 230px;
         min-height: 45px;
         background: #3E3A39;
         border-radius: 100px;
@@ -578,6 +582,10 @@ label {
         font-size: 18px;
         text-align: center;
         color: #FFFFFF;
+    }
+
+    .form-desc {
+        padding: 0 14px;
     }
 
     .for-content-txt {
@@ -645,6 +653,14 @@ label {
         color: rgba(0, 0, 0, 0.8);
     }
 
+    .form-input-txt {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        text-align: right;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
     .for-content-icon {
         width: 20px;
         height: 20px;
@@ -686,5 +702,9 @@ label {
     .icon {
         width: 20px;
         height: 20px;
+    }
+
+    .result-content {
+        padding: 24px 20px 20px 20px!important
     }
 }

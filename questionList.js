@@ -28,7 +28,7 @@ const questions = [
     {
         idx: 3,
         type: 1,
-        question: '以下何種物品需要回收',
+        question: '以下何種物品需要回收？',
         options: [
             '電子發票',
             '大餅的塑膠襯盒',
@@ -41,7 +41,7 @@ const questions = [
     {
         idx: 4,
         type: 1,
-        question: '如果沒有做好垃圾分類，會被罰款多少呢',
+        question: '如果沒有做好垃圾分類，會被罰款多少呢？',
         options: [
             '1,200~6,000元',
             '6,000~12,000元',
@@ -54,7 +54,7 @@ const questions = [
     {
         idx: 5,
         type: 1,
-        question: '垃圾分3類是哪3類',
+        question: '垃圾分3類是哪3類？',
         options: [
             '一般垃圾',
             '資源回收',

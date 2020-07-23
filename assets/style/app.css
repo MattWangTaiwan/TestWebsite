@@ -76,16 +76,14 @@ label {
     }
 
     .logo {
-        width: 36%;
-        min-width: 566px;
-        height: 22%;
-        min-height: 264px;
+        width: 566px;
+        height: 264px;
     }
 
     .question-panel {
         position: relative;
-        width: calc(65% - 16px);
-        min-width: 948px;
+        /*width: calc(65% - 16px);*/
+        width: 932px;
         box-shadow: 0 0 0 8px #FFFFFF;
         box-sizing: border-box;
         border-radius: 20px;
@@ -96,7 +94,7 @@ label {
     .content {
         position: relative;
         padding: 130px 24px 20px 24px;
-        height: calc(100% - (6.3% + 59px) - 10px);
+        /*height: calc(100% - (6.3% + 59px) - 10px);*/
         width: 100%;
         overflow-y: auto;
     }
@@ -115,7 +113,7 @@ label {
 
     .instruction-banner {
         position: absolute;
-        width: calc(100% + 48px);
+        width: calc(932px + 48px);
         height: 98px;
         top: 31px;
         left: -24px;
@@ -146,7 +144,7 @@ label {
 
     .question-banner {
         position: absolute;
-        width: calc(45% + 24px - 40px);
+        width: calc(420px + 24px - 40px);
         height: 98px;
         top: 31px;
         left: -24px;
@@ -201,6 +199,11 @@ label {
         color: #5B1D12;
     }
 
+    .options > .icon {
+        width: 60px;
+        height: 60px;
+    }
+
     .question > .txt {
         user-select: none;
         font-weight: bold;
@@ -211,10 +214,8 @@ label {
     }
 
     .hint {
-        width: 29.7%;
-        min-width: 429px;
-        height: 22.2%;
-        min-height: 228px;
+        width: 429px;
+        height: 228px;
         background: linear-gradient(0deg, #9ED3C0 0%, #EEF6E5 100%);
         border: 6px solid #006149;
         box-sizing: border-box;
@@ -230,15 +231,15 @@ label {
     }
 
     .correct-info {
-        min-width: 545px;
-        min-height: 102px;
+        width: 545px;
+        height: 102px;
         background: #D53C67;
         border-radius: 100px;
     }
 
     .wrong-info {
-        min-width: 545px;
-        min-height: 102px;
+        width: 545px;
+        height: 102px;
         background: #3E3A39;
         border-radius: 100px;
     }
@@ -275,8 +276,7 @@ label {
 
     .form-panel {
         position: relative;
-        width: calc(84.3% - 16px);
-        min-width: 1256px;
+        width: 1256px;
         background: linear-gradient(90deg, #FDF0F6 0%, #F5B7C1 100%);
         box-shadow: 0 0 0 8px #FFFFFF;
         box-sizing: border-box;
@@ -288,7 +288,7 @@ label {
     }
 
     .form-title {
-        min-height: 102px;
+        height: 102px;
         margin: 0 14px;
         background: #D53C67;
         border-radius: 100px;
@@ -306,8 +306,8 @@ label {
     }
 
     .for-content-icon {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         margin-top: 5px;
     }
 
@@ -372,8 +372,7 @@ label {
 
     .content {
         position: relative;
-        padding: 110px 24px 20px 24px;
-        height: calc(100% - (6.3% + 59px) - 10px);
+        padding: 90px 24px 20px 24px;
         width: 100%;
     }
 
@@ -542,7 +541,7 @@ label {
     }
 
     .result-content {
-        padding: 24px 12px 20px 12px!important;
+        padding: 24px 60px 20px 60px!important;
     }
 
     .correct-icon {

@@ -12,7 +12,7 @@ body {
 }
 
 .red {
-    color: #B41A3F;
+    color: #B41A3F!important;
 }
 
 .green {
@@ -54,6 +54,18 @@ label {
 
 .panel-color-orange {
     background: linear-gradient(90deg, #FFFBCF 0%, #FCD89A 100%);
+}
+
+button:focus {
+    outline: none;
+}
+
+input {
+    border: unset;
+}
+
+.warning {
+    border: 2px solid rgb(253, 13, 77);
 }
 
 @media screen and (min-width: 1440px) {
@@ -199,9 +211,9 @@ label {
         color: #5B1D12;
     }
 
-    .options > .icon {
-        width: 60px;
-        height: 60px;
+    .options > img {
+        width: 48px;
+        height: 48px;
     }
 
     .question > .txt {
@@ -330,10 +342,21 @@ label {
         border-radius: 50px;
         font-weight: bold;
         font-size: 48px;
-        line-height: 72px;
+        line-height: 80px;
         text-align: center;
         color: #FFFFFF;
         margin: 0 auto;
+        border: unset;
+    }
+
+    .last-panel-text {
+        margin-top: 96px;
+        margin-bottom: 96px;
+        padding: 0 340px;
+    }
+
+    .last-panel-text > div {
+        margin-bottom: 32px;
     }
 }
 
@@ -476,9 +499,14 @@ label {
         user-select: none;
         font-style: normal;
         font-weight: 500;
-        font-size: 32px;
-        line-height: 48px;
+        font-size: 28px;
+        line-height: 42px;
         color: #5B1D12;
+    }
+
+    .options > img {
+        width: 42px;
+        height: 42px;
     }
 
     .question > .txt {
@@ -579,7 +607,7 @@ label {
         background: #D53C67;
         border-radius: 100px;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 36px;
         text-align: center;
         color: #FFFFFF;
     }
@@ -620,6 +648,17 @@ label {
         text-align: center;
         color: #FFFFFF;
         margin: 0 auto;
+        border: unset;
+    }
+
+    .last-panel-text {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 0 100px;
+    }
+
+    .last-panel-text > div {
+        margin-bottom: 20px;
     }
 }
 
@@ -690,6 +729,11 @@ label {
         color: #5B1D12;
     }
 
+    .options > img {
+        width: 24px;
+        height: 24px;
+    }
+
     .question > .txt {
         user-select: none;
         font-weight: bold;
@@ -714,5 +758,26 @@ label {
 
     .result-content {
         padding: 24px 20px 20px 20px!important
+    }
+
+    .form-title {
+        min-height: 60px;
+        margin: 0 14px;
+        background: #D53C67;
+        border-radius: 100px;
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .last-panel-text {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        padding: 0 36px;
+    }
+
+    .last-panel-text > div {
+        margin-bottom: 20px;
     }
 }

@@ -37,32 +37,39 @@
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">姓名</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="name" type="text"/>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">身分證字號</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="id" type="text"/>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">戶籍地址</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="address_1" type="text"/>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">寄送地址</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="address_2" type="text"/>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">聯絡電話</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="phone" type="text" pattern="\d"/>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">安全驗證碼</label>
-                <input class="col-6 col-sm-5" type="text"/>
+                <input class="col-3 col-sm-2 px-2" type="text" name="captcha_txt" maxlength="4" required/>
+                <canvas id="captcha" style="margin-left: 4px; width: 60px; height: 30px"></canvas>
+                <span style="color: rgb(253, 13, 77)"></span>
             </div>
         </form>
         <div class="my-2 form-desc" style="display:flex;">
@@ -71,13 +78,15 @@
                 如抽中特獎至伍獎請攜帶身分證正本親自至金門縣環保局領取獎項， 如需代領亦請攜帶得獎人身分證及代領人身分證於環保局登記領取。
             </div>
         </div>
-        <div id="send">
+        <div id="send" style="cursor: pointer">
             確認送出
         </div>
     </div>
-    <div id="title" class="row mx-0 pt-4 pl-2" style="align-items: center; justify-content: space-around; margin-bottom: 20px;">
+    <div id="title" class="row mx-0 pt-4 pl-2"
+         style="align-items: center; justify-content: space-around; margin-bottom: 20px;">
         <img src="./assets/img/Logo.svg" class="logo" style="z-index: 1">
-        <div class="hint" style="z-index: 1; display: flex; flex-direction: column; justify-content: space-around; opacity: 0">
+        <div class="hint"
+             style="z-index: 1; display: flex; flex-direction: column; justify-content: space-around; opacity: 0">
             <div class="row mx-0 mt-1" style="justify-content: center">
                 <img src="./assets/img/img_correct_num.svg" class="mt-1" style="width: 80%">
             </div>
@@ -123,21 +132,25 @@
                 <div class="txt"></div>
             </div>
             <div class="row mx-0 mt-2">
-                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
-                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
-                    <div class="col-11 txt"></div>
+                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="1"
+                     style="align-items: flex-start; cursor: pointer;">
+                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <div class="col-11 txt pr-0"></div>
                 </div>
-                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
-                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
-                    <div class="col-11 txt"></div>
+                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="2"
+                     style="align-items: flex-start; cursor: pointer;">
+                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <div class="col-11 txt pr-0"></div>
                 </div>
-                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
-                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
-                    <div class="col-11 txt"></div>
+                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="3"
+                     style="align-items: flex-start; cursor: pointer;">
+                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <div class="col-11 txt pr-0"></div>
                 </div>
-                <div class="options row col-xl-6 col-lg-12 mx-0" style="align-items: center">
-                    <img src="./assets/img/img_checkbox.svg" class="icon col-1 px-0" style="cursor: pointer;">
-                    <div class="col-11 txt"></div>
+                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="4"
+                     style="align-items: flex-start; cursor: pointer;">
+                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <div class="col-11 txt pr-0"></div>
                 </div>
             </div>
             <div class="row mx-0 mt-5" style="justify-content: center">
@@ -173,12 +186,38 @@
             </div>
         </div>
     </div>
+    <div id="last" class="form-panel" style="display: none">
+        <div class="form-title" style="display: flex; justify-content: center; align-items: center">
+            <div style="padding: 0 18px">
+                抽獎資料已送出！
+            </div>
+        </div>
+        <div class="last-panel-text">
+            <div class="result-info-txt" style="text-align: center">
+                恭喜您完成本遊戲，我們將於
+            </div>
+            <div class="result-info-txt red" style="text-align: center;">
+                10月12日星期一
+            </div>
+            <div class="result-info-txt" style="text-align: center;">
+                抽出幸運民眾，敬請鎖定環保局網站活動快訊，看看您是否可以將大獎帶回家哦！
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="questionList.js"></script>
+<script type="text/javascript" src="captcha.js"></script>
+<script type="text/javascript" src="checkId.js"></script>
 <script type="text/javascript">
     let question = {};
     let correct = 0;
+
+    // $('#title').hide();
+    // $('#main').hide();
+    // $('#form-panel').hide();
+    // $('#last').show();
+    // createCaptcha();
 
     $('#start').on('click', function (e) {
         $('.question-panel').addClass('panel-color-orange').removeClass('panel-color-green');
@@ -194,20 +233,15 @@
     });
 
     let select = -1;
-    $('.options > img').on('click', function (e) {
-        $(e.target).attr('src', './assets/img/img_checkbox_select.svg');
-        // $(e).target.src = './assets/img/img_checkbox_select.svg';
-        // console.log($(e.target).index());
-        const options = $('.options > img');
-        if (select >= 0) {
-            $(options[select]).attr('src', './assets/img/img_checkbox.svg');
-        }
-        select = options.index(e.target);
+    $('.options').on('click', function (e) {
+        $(this).find('img').attr('src', './assets/img/img_checkbox_select.svg');
+        $(this).siblings('.options').find('img').attr('src', './assets/img/img_checkbox.svg');
+        select = $(this).data('content');
     })
 
     $('#next').on('click', function (e) {
         if (select < 0) return;
-        if (select === question.ans - 1) {
+        if (select === question.ans) {
             $('#question').hide();
             $('#questionBanner').hide();
             $('#correct').show();
@@ -231,15 +265,74 @@
             $('#title').hide();
             $('#main').hide();
             $('#form-panel').show();
+            createCaptcha();
         } else {
             $('#questionBanner').show();
             $('#question').show();
 
-            $($('.options > img')[select]).attr('src', './assets/img/img_checkbox.svg');
+            $('.options').find('img').attr('src', './assets/img/img_checkbox.svg');
             select = -1;
 
             question = randomSelect();
             insertQuestion(question);
+        }
+    })
+
+    $('#send').on('click', function () {
+        let validSend = true;
+        $('input').each(function () {
+            if ($(this).attr('name') === 'captcha_txt' && $(this).hasClass('warning')) {
+                createCaptcha();
+            }
+
+            if ($(this).val() === '' && !$(this).hasClass('warning')) {
+                $(this).addClass('warning');
+                $(this).siblings('span').html('*');
+            }
+
+            if ($(this).hasClass('warning')) {
+                validSend = false;
+            }
+        })
+
+        if (!validSend) {
+            alert('fail');
+        } else {
+            $('#form-panel').hide();
+            $('#last').show();
+        }
+    })
+
+    const regInt = /^[0-9]*$/;
+    $('input').blur(function () {
+        const name = $(this).attr('name');
+        const value = $(this).val();
+        let valid = true;
+        switch (name) {
+            case 'name':
+            case 'address_1':
+            case 'address_2':
+                valid = value !== '';
+                break;
+            case 'id':
+                valid = checkID(value);
+                break;
+            case 'phone':
+                valid = value !== '' && regInt.test(value);
+                break;
+            case 'captcha_txt':
+                valid = value !== '' && value === code;
+                break;
+            default:
+                break;
+        }
+
+        if (!valid) {
+            $(this).addClass('warning');
+            $(this).siblings('span').html('*');
+        } else {
+            $(this).removeClass('warning');
+            $(this).siblings('span').html('');
         }
     })
 

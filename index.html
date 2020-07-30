@@ -43,7 +43,7 @@
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">身分證字號</label>
-                <input class="col-6 col-sm-5 px-2" name="id" type="text"/>
+                <input class="col-6 col-sm-5 px-2" name="pid" type="text"/>
                 <span style="color: rgb(253, 13, 77)"></span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
@@ -212,6 +212,7 @@
 <script type="text/javascript">
     let question = {};
     let correct = 0;
+    const logs = [];
 
     // $('#title').hide();
     // $('#main').hide();
@@ -241,6 +242,13 @@
 
     $('#next').on('click', function (e) {
         if (select < 0) return;
+        const time = new Date();
+        logs.push({
+            qidx: question.idx,
+            select: select,
+            result: select === question.ans,
+            time: `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}`
+        });
         if (select === question.ans) {
             $('#question').hide();
             $('#questionBanner').hide();
@@ -298,8 +306,10 @@
         if (!validSend) {
             alert('fail');
         } else {
-            $('#form-panel').hide();
-            $('#last').show();
+            const payload = $('#form').serialize() + `&log=${JSON.stringify(logs)}`;
+            console.log(payload);
+            // $('#form-panel').hide();
+            // $('#last').show();
         }
     })
 
@@ -321,7 +331,7 @@
                 valid = value !== '' && regInt.test(value);
                 break;
             case 'captcha_txt':
-                valid = value !== '' && value === code;
+                valid = value !== '' && value.toLowerCase() === code.toLowerCase();
                 break;
             default:
                 break;

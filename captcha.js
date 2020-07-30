@@ -3,7 +3,7 @@ function createCaptcha() {
     //clear the contents of captcha div first
     document.getElementById('captcha').innerHTML = "";
     let charsArray =
-        "023456789abcdefghijkmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        "023456789abcdefghijkmnopqrstuvwxyz";
     let lengthOtp = 4;
     let captcha = [];
     for (let i = 0; i < lengthOtp; i++) {

@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="assets/style/app.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 <body>
 <div style="width: 100%; height: 100%; background: linear-gradient(173.97deg, #E6F4FD 0%, #ADDEF8 23.68%, #ADDEF8 44.74%, #7ECEF4 73.16%, #A3D9EA 85%);">
-    <img src="./assets/img/bg_cloud.svg" class="bg-2">
-    <img src="./assets/img/bg_island.svg" class="bg-1">
+    <img src="assets/img/bg_cloud.svg" class="bg-2">
+    <img src="assets/img/bg_island.svg" class="bg-1">
     <div id="form-panel" class="form-panel" style="display: none">
         <div class="form-title" style="display: flex; justify-content: center; align-items: center">
             <div style="padding: 0 18px">
@@ -22,13 +24,13 @@
             </div>
         </div>
         <div class="mt-2 form-desc" style="display:flex;">
-            <img src="./assets/img/icon_recycle.svg" class="icon form-content-icon">
+            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
             <div class="form-content-txt pl-1">
                 再次提醒，參加資格須為金門縣民(身份證字號開頭為W或戶籍地址 位於金門縣)，若不符合，將取消抽獎資格以確保參加者之公平性。
             </div>
         </div>
         <div class="mt-2 form-desc" style="display:flex;">
-            <img src="./assets/img/icon_recycle.svg" class="icon form-content-icon">
+            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
             <div class="form-content-txt pl-1">
                 請勿重複參加，以免妨礙您的抽獎資格。
             </div>
@@ -40,11 +42,16 @@
                 <input class="col-6 col-sm-5 px-2" name="name" type="text"/>
                 <span style="color: rgb(253, 13, 77)"></span>
             </div>
-            <div class="row form-group mx-0" style="align-items: center">
+            <div class="row mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">身分證字號</label>
                 <input class="col-6 col-sm-5 px-2" name="pid" type="text"/>
                 <span style="color: rgb(253, 13, 77)"></span>
+            </div>
+            <div class="row form-group mx-0" style="align-items: center">
+                <div class="col-sm-1"></div>
+                <label class="col-5 col-sm-3" style="text-align: right"></label>
+                <span id="pid_error" class="form-error-txt mt-1" style="color: rgb(253, 13, 77); display: none">輸入錯誤</span>
             </div>
             <div class="row form-group mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
@@ -64,16 +71,21 @@
                 <input class="col-6 col-sm-5 px-2" name="phone" type="text" pattern="\d"/>
                 <span style="color: rgb(253, 13, 77)"></span>
             </div>
-            <div class="row form-group mx-0" style="align-items: center">
+            <div class="row mx-0" style="align-items: center">
                 <div class="col-sm-1"></div>
                 <label class="col-5 col-sm-3" style="text-align: right">安全驗證碼</label>
                 <input class="col-3 col-sm-2 px-2" type="text" name="captcha_txt" maxlength="4" required/>
                 <canvas id="captcha" style="margin-left: 4px; width: 60px; height: 30px"></canvas>
                 <span style="color: rgb(253, 13, 77)"></span>
             </div>
+            <div class="row form-group mx-0" style="align-items: center">
+                <div class="col-sm-1"></div>
+                <label class="col-5 col-sm-3" style="text-align: right"></label>
+                <span id="captcha_txt_error" class="form-error-txt mt-1" style="color: rgb(253, 13, 77); display: none">輸入錯誤</span>
+            </div>
         </form>
         <div class="my-2 form-desc" style="display:flex;">
-            <img src="./assets/img/icon_recycle.svg" class="icon form-content-icon">
+            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
             <div class="form-content-txt pl-1">
                 如抽中特獎至伍獎請攜帶身分證正本親自至金門縣環保局領取獎項， 如需代領亦請攜帶得獎人身分證及代領人身分證於環保局登記領取。
             </div>
@@ -84,14 +96,14 @@
     </div>
     <div id="title" class="row mx-0 pt-4 pl-2"
          style="align-items: center; justify-content: space-around; margin-bottom: 20px;">
-        <img src="./assets/img/Logo.svg" class="logo" style="z-index: 1">
+        <img src="assets/img/Logo.svg" class="logo" style="z-index: 1">
         <div class="hint"
              style="z-index: 1; display: flex; flex-direction: column; justify-content: space-around; opacity: 0">
             <div class="row mx-0 mt-1" style="justify-content: center">
-                <img src="./assets/img/img_correct_num.svg" class="mt-1" style="width: 80%">
+                <img src="assets/img/img_correct_num.svg" class="mt-1" style="width: 80%">
             </div>
             <div class="row px-3 mb-1 mx-0" style="justify-content: space-evenly">
-                <img src="./assets/img/img_right.svg">
+                <img src="assets/img/img_right.svg">
                 <div class="correct-txt">
                     <span id="count">0</span><span>/5</span>
                 </div>
@@ -100,18 +112,18 @@
     </div>
     <div id="main" class="question-panel panel-color-green">
         <div id="instructionBanner" class="instruction-banner">
-            <img src="./assets/img/img_instruction.svg" class="banner-img">
+            <img src="assets/img/img_instruction.svg" class="banner-img">
         </div>
         <div id="questionBanner" class="question-banner" style="display: none"></div>
         <div id="instruction" class="content">
             <div class="row mx-0 mt-2">
-                <img src="./assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
+                <img src="assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
                 <div class="col-11 txt-1 red">
                     金門縣環保局為回饋金門縣民特舉辦資源回收問答題宣導遊戲，需答對累積五題，即可填寫個人資料參加抽獎活動。
                 </div>
             </div>
             <div class="row mx-0 mt-2">
-                <img src="./assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
+                <img src="assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
                 <div class="col-11 txt-1 green">
                     注意：參加抽獎資格需為金門縣民(身分證字號開頭為W或戶籍地址位於金門縣)，不符合資格無法參加抽獎，主辦單位保有隨時修改及終止本活動之權利。
                 </div>
@@ -134,22 +146,22 @@
             <div class="row mx-0 mt-2">
                 <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="1"
                      style="align-items: flex-start; cursor: pointer;">
-                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
                     <div class="col-11 txt pr-0"></div>
                 </div>
                 <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="2"
                      style="align-items: flex-start; cursor: pointer;">
-                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
                     <div class="col-11 txt pr-0"></div>
                 </div>
                 <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="3"
                      style="align-items: flex-start; cursor: pointer;">
-                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
                     <div class="col-11 txt pr-0"></div>
                 </div>
                 <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="4"
                      style="align-items: flex-start; cursor: pointer;">
-                    <img src="./assets/img/img_checkbox.svg" class="col-1 px-0">
+                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
                     <div class="col-11 txt pr-0"></div>
                 </div>
             </div>
@@ -166,7 +178,7 @@
             <div class="result-info-txt my-2">
                 觀念很正確喔
             </div>
-            <img src="./assets/img/img_right.svg" class="correct-icon">
+            <img src="assets/img/img_right.svg" class="correct-icon">
             <div class="row mx-0 mt-5" style="justify-content: center">
                 <div class="next btn-style btn-green start-btn">
                     下一題
@@ -178,7 +190,7 @@
                 答錯了哦
             </div>
             <div class="result-info-txt my-2"></div>
-            <img src="./assets/img/img_wrong.svg" class="wrong-icon">
+            <img src="assets/img/img_wrong.svg" class="wrong-icon">
             <div class="row mx-0 mt-5" style="justify-content: center">
                 <div class="next btn-style btn-green start-btn">
                     下一題
@@ -206,9 +218,9 @@
     </div>
 </div>
 
-<script type="text/javascript" src="questionList.js"></script>
-<script type="text/javascript" src="captcha.js"></script>
-<script type="text/javascript" src="checkId.js"></script>
+<script type="text/javascript" src="js/questionList.js"></script>
+<script type="text/javascript" src="js/captcha.js"></script>
+<script type="text/javascript" src="js/checkId.js"></script>
 <script type="text/javascript">
     let question = {};
     let correct = 0;
@@ -216,8 +228,8 @@
 
     // $('#title').hide();
     // $('#main').hide();
-    // $('#form-panel').hide();
-    // $('#last').show();
+    // $('#form-panel').show();
+    // // $('#last').show();
     // createCaptcha();
 
     $('#start').on('click', function (e) {
@@ -235,8 +247,8 @@
 
     let select = -1;
     $('.options').on('click', function (e) {
-        $(this).find('img').attr('src', './assets/img/img_checkbox_select.svg');
-        $(this).siblings('.options').find('img').attr('src', './assets/img/img_checkbox.svg');
+        $(this).find('img').attr('src', 'assets/img/img_checkbox_select.svg');
+        $(this).siblings('.options').find('img').attr('src', 'assets/img/img_checkbox.svg');
         select = $(this).data('content');
     })
 
@@ -269,7 +281,7 @@
         $('#correct').hide();
         $('#wrong').hide();
 
-        if (correct === 2) {
+        if (correct === 5) {
             $('#title').hide();
             $('#main').hide();
             $('#form-panel').show();
@@ -278,7 +290,7 @@
             $('#questionBanner').show();
             $('#question').show();
 
-            $('.options').find('img').attr('src', './assets/img/img_checkbox.svg');
+            $('.options').find('img').attr('src', 'assets/img/img_checkbox.svg');
             select = -1;
 
             question = randomSelect();
@@ -296,6 +308,7 @@
             if ($(this).val() === '' && !$(this).hasClass('warning')) {
                 $(this).addClass('warning');
                 $(this).siblings('span').html('*');
+                $(`#${$(this).attr('name')}_error`).show();
             }
 
             if ($(this).hasClass('warning')) {
@@ -303,15 +316,28 @@
             }
         })
 
-        if (!validSend) {
-            alert('fail');
-        } else {
+        if (validSend) {
             const payload = $('#form').serialize() + `&log=${JSON.stringify(logs)}`;
-            console.log(payload);
-            // $('#form-panel').hide();
-            // $('#last').show();
+            $.post('/event/submit/', payload, function(data) {
+                if (data.success) {
+                    $('#form-panel').hide();
+                    $('#last').show();
+                } else {
+                    Swal.fire({
+                        text: '此身分證字號已經參加過囉！',
+                        confirmButtonText: '知道了'
+                    });
+                }
+            },'json');
         }
     })
+
+    $('input').focus(function () {
+        const name = $(this).attr('name');
+        $(this).removeClass('warning');
+        $(this).siblings('span').html('');
+        $(`#${name}_error`).hide();
+    });
 
     const regInt = /^[0-9]*$/;
     $('input').blur(function () {
@@ -324,7 +350,7 @@
             case 'address_2':
                 valid = value !== '';
                 break;
-            case 'id':
+            case 'pid':
                 valid = checkID(value);
                 break;
             case 'phone':
@@ -340,9 +366,11 @@
         if (!valid) {
             $(this).addClass('warning');
             $(this).siblings('span').html('*');
+            $(`#${name}_error`).show();
         } else {
             $(this).removeClass('warning');
             $(this).siblings('span').html('');
+            $(`#${name}_error`).hide();
         }
     })
 
@@ -351,7 +379,7 @@
         $('#question > * > .options > .txt').each(function (idx, e) {
             $(e).html(quz.options[idx]);
         })
-        $('#questionBanner').html(`<img src="./assets/img/img_question_${quz.type}.svg" class="banner-img">`)
+        $('#questionBanner').html(`<img src="assets/img/img_question_${quz.type}.svg" class="banner-img">`)
     }
 </script>
 

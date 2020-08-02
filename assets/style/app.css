@@ -3,11 +3,16 @@
     src: url("../fonts/GenJyuuGothic-Normal.ttf");
 }
 
+@font-face {
+    font-family: openhuninn;
+    src: url("../fonts/jf-openhuninn-1.1.ttf");
+}
+
 body {
     background-color: #A3D9EA;
     width: 100vw;
     height: 100vh;
-    font-family: Gen Jyuu Gothic, serif;
+    font-family: Gen Jyuu Gothic, openhuninn, PingFang, Microsoft JhengHei, serif;
     font-style: normal;
 }
 
@@ -335,6 +340,13 @@ input {
         color: rgba(0, 0, 0, 0.6);
     }
 
+    .form-error-txt {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: right;
+    }
+
     #send {
         width: 284px;
         height: 80px;
@@ -637,6 +649,13 @@ input {
         color: rgba(0, 0, 0, 0.6);
     }
 
+    .form-error-txt {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: right;
+    }
+
     #send {
         width: 142px;
         height: 40px;
@@ -698,6 +717,13 @@ input {
         line-height: 14px;
         text-align: right;
         color: rgba(0, 0, 0, 0.6);
+    }
+
+    .form-error-txt {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: right;
     }
 
     .form-content-icon {

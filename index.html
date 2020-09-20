@@ -1,387 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang=en>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>資源回收問答活動</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style/app.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <meta charset=utf-8>
+  <meta http-equiv=X-UA-Compatible content="IE=edge">
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <!--[if IE]>
+  <link rel="icon" href="/favicon.ico"><![endif]--><title>國營考試通</title>
+  <link href=/css/chunk-043e790d.fae1a22a.css rel=prefetch>
+  <link href=/css/chunk-05fa753e.858172c0.css rel=prefetch>
+  <link href=/css/chunk-0d85c6b9.8723f2bc.css rel=prefetch>
+  <link href=/css/chunk-2967f664.781ffb95.css rel=prefetch>
+  <link href=/css/chunk-5f647a02.b39ee0f5.css rel=prefetch>
+  <link href=/css/chunk-623a4d00.89c6ac09.css rel=prefetch>
+  <link href=/css/chunk-65a63208.4fd5d518.css rel=prefetch>
+  <link href=/css/chunk-75e68ec5.860b2864.css rel=prefetch>
+  <link href=/css/chunk-7980b384.dcc058b3.css rel=prefetch>
+  <link href=/css/chunk-79a07b59.c23b0069.css rel=prefetch>
+  <link href=/css/chunk-7f42df65.af134ef9.css rel=prefetch>
+  <link href=/css/chunk-d5353dd8.c7c71118.css rel=prefetch>
+  <link href=/css/chunk-dade7fdc.02c19464.css rel=prefetch>
+  <link href=/js/about.f1976cbe.js rel=prefetch>
+  <link href=/js/chunk-043e790d.898eff1a.js rel=prefetch>
+  <link href=/js/chunk-05fa753e.a57d9bac.js rel=prefetch>
+  <link href=/js/chunk-0d85c6b9.9190c03e.js rel=prefetch>
+  <link href=/js/chunk-2967f664.2915edb4.js rel=prefetch>
+  <link href=/js/chunk-2d0c4d85.1d83e888.js rel=prefetch>
+  <link href=/js/chunk-467c4b8a.6452b5ed.js rel=prefetch>
+  <link href=/js/chunk-5f647a02.5c40ca76.js rel=prefetch>
+  <link href=/js/chunk-623a4d00.f4c0bb21.js rel=prefetch>
+  <link href=/js/chunk-65a63208.13bfc762.js rel=prefetch>
+  <link href=/js/chunk-75e68ec5.9ba40058.js rel=prefetch>
+  <link href=/js/chunk-7980b384.7218828f.js rel=prefetch>
+  <link href=/js/chunk-79a07b59.5c268334.js rel=prefetch>
+  <link href=/js/chunk-7f42df65.ce0a0df0.js rel=prefetch>
+  <link href=/js/chunk-d5353dd8.cc6b02f5.js rel=prefetch>
+  <link href=/js/chunk-dade7fdc.567f81d8.js rel=prefetch>
+  <link href=/css/index.fe8ec17e.css rel=preload as=style>
+  <link href=/js/chunk-vendors.7ca3dd95.js rel=preload as=script>
+  <link href=/js/index.fb28b574.js rel=preload as=script>
+  <link href=/css/index.fe8ec17e.css rel=stylesheet>
+  <link rel=icon type=image/png sizes=32x32 href=/img/icons/img_favicon@2x.png>
+  <link rel=icon type=image/png sizes=16x16 href=/img/icons/img_favicon.png>
+  <link rel=manifest href=/manifest.json crossorigin=anonymous>
+  <meta name=theme-color content=#d98c26>
+  <meta name=apple-mobile-web-app-capable content=no>
+  <meta name=apple-mobile-web-app-status-bar-style content=default>
+  <meta name=apple-mobile-web-app-title content=國營考試通>
+  <link rel=apple-touch-icon href=/img/icons/img_logo_launch.png>
+  <link rel=mask-icon href=/img/icons/img_favicon.png color=#d98c26>
+  <meta name=msapplication-TileImage content=/img/icons/img_logo_launch.png>
+  <meta name=msapplication-TileColor content=#FAFAFA>
 </head>
 <body>
-<div style="width: 100%; height: 100%; background: linear-gradient(173.97deg, #E6F4FD 0%, #ADDEF8 23.68%, #ADDEF8 44.74%, #7ECEF4 73.16%, #A3D9EA 85%);">
-    <img src="assets/img/bg_cloud.svg" class="bg-2">
-    <img src="assets/img/bg_island.svg" class="bg-1">
-    <div id="form-panel" class="form-panel" style="display: none">
-        <div class="form-title" style="display: flex; justify-content: center; align-items: center">
-            <div style="padding: 0 18px">
-                恭喜您達成抽獎資格！ 請填寫以下資料
-            </div>
-        </div>
-        <div class="mt-2 form-desc" style="display:flex;">
-            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
-            <div class="form-content-txt pl-1">
-                再次提醒，參加資格須為金門縣民(身份證字號開頭為W或戶籍地址 位於金門縣)，若不符合，將取消抽獎資格以確保參加者之公平性。
-            </div>
-        </div>
-        <div class="mt-2 form-desc" style="display:flex;">
-            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
-            <div class="form-content-txt pl-1">
-                請勿重複參加，以免妨礙您的抽獎資格。
-            </div>
-        </div>
-        <form id="form" class="px-0 mt-2 form-input-txt">
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">姓名</label>
-                <input class="col-6 col-sm-5 px-2" name="name" type="text"/>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">身分證字號</label>
-                <input class="col-6 col-sm-5 px-2" name="pid" type="text"/>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right"></label>
-                <span id="pid_error" class="form-error-txt mt-1" style="color: rgb(253, 13, 77); display: none">輸入錯誤</span>
-            </div>
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">戶籍地址</label>
-                <input class="col-6 col-sm-5 px-2" name="address_1" type="text"/>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">寄送地址</label>
-                <input class="col-6 col-sm-5 px-2" name="address_2" type="text"/>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">聯絡電話</label>
-                <input class="col-6 col-sm-5 px-2" name="phone" type="text" pattern="\d"/>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right">安全驗證碼</label>
-                <input class="col-3 col-sm-2 px-2" type="text" name="captcha_txt" maxlength="4" required/>
-                <canvas id="captcha" style="margin-left: 4px; width: 60px; height: 30px"></canvas>
-                <span style="color: rgb(253, 13, 77)"></span>
-            </div>
-            <div class="row form-group mx-0" style="align-items: center">
-                <div class="col-sm-1"></div>
-                <label class="col-5 col-sm-3" style="text-align: right"></label>
-                <span id="captcha_txt_error" class="form-error-txt mt-1" style="color: rgb(253, 13, 77); display: none">輸入錯誤</span>
-            </div>
-        </form>
-        <div class="my-2 form-desc" style="display:flex;">
-            <img src="assets/img/icon_recycle.svg" class="icon form-content-icon">
-            <div class="form-content-txt pl-1">
-                如抽中特獎至伍獎請攜帶身分證正本親自至金門縣環保局領取獎項， 如需代領亦請攜帶得獎人身分證及代領人身分證於環保局登記領取。
-            </div>
-        </div>
-        <div id="send" style="cursor: pointer">
-            確認送出
-        </div>
-    </div>
-    <div id="title" class="row mx-0 pt-4 pl-2"
-         style="align-items: center; justify-content: space-around; margin-bottom: 20px;">
-        <img src="assets/img/Logo.svg" class="logo" style="z-index: 1">
-        <div class="hint"
-             style="z-index: 1; display: flex; flex-direction: column; justify-content: space-around; opacity: 0">
-            <div class="row mx-0 mt-1" style="justify-content: center">
-                <img src="assets/img/img_correct_num.svg" class="mt-1" style="width: 80%">
-            </div>
-            <div class="row px-3 mb-1 mx-0" style="justify-content: space-evenly">
-                <img src="assets/img/img_right.svg">
-                <div class="correct-txt">
-                    <span id="count">0</span><span>/5</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="main" class="question-panel panel-color-green">
-        <div id="instructionBanner" class="instruction-banner">
-            <img src="assets/img/img_instruction.svg" class="banner-img">
-        </div>
-        <div id="questionBanner" class="question-banner" style="display: none"></div>
-        <div id="instruction" class="content">
-            <div class="row mx-0 mt-2">
-                <img src="assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
-                <div class="col-11 txt-1 red">
-                    金門縣環保局為回饋金門縣民特舉辦資源回收問答題宣導遊戲，需答對累積五題，即可填寫個人資料參加抽獎活動。
-                </div>
-            </div>
-            <div class="row mx-0 mt-2">
-                <img src="assets/img/icon_recycle.svg" class="icon col-1 px-0" style="margin-top: 14px">
-                <div class="col-11 txt-1 green">
-                    注意：參加抽獎資格需為金門縣民(身分證字號開頭為W或戶籍地址位於金門縣)，不符合資格無法參加抽獎，主辦單位保有隨時修改及終止本活動之權利。
-                </div>
-            </div>
-            <div class="row mx-0 mt-3">
-                <div class="col txt-2 red" style="text-align: center">
-                    *必要時請提供相關身份佐證證明資料*
-                </div>
-            </div>
-            <div class="row mx-0 mt-4" style="justify-content: center">
-                <div id="start" class="btn-style btn-red start-btn">
-                    遊戲開始
-                </div>
-            </div>
-        </div>
-        <div id="question" class="content" style="display: none">
-            <div class="question row mx-0 mt-2" style="justify-content: center">
-                <div class="txt"></div>
-            </div>
-            <div class="row mx-0 mt-2">
-                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="1"
-                     style="align-items: flex-start; cursor: pointer;">
-                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
-                    <div class="col-11 txt pr-0"></div>
-                </div>
-                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="2"
-                     style="align-items: flex-start; cursor: pointer;">
-                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
-                    <div class="col-11 txt pr-0"></div>
-                </div>
-                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="3"
-                     style="align-items: flex-start; cursor: pointer;">
-                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
-                    <div class="col-11 txt pr-0"></div>
-                </div>
-                <div class="options row col-lg-6 col-md-12 mx-0 mb-2" data-content="4"
-                     style="align-items: flex-start; cursor: pointer;">
-                    <img src="assets/img/img_checkbox.svg" class="col-1 px-0">
-                    <div class="col-11 txt pr-0"></div>
-                </div>
-            </div>
-            <div class="row mx-0 mt-5" style="justify-content: center">
-                <div id="next" class="btn-style btn-green start-btn">
-                    確認
-                </div>
-            </div>
-        </div>
-        <div id="correct" class="content result-content" style="text-align: center; display: none">
-            <div class="correct-info correct-info-txt">
-                恭喜您～答對了
-            </div>
-            <div class="result-info-txt my-2">
-                觀念很正確喔
-            </div>
-            <img src="assets/img/img_right.svg" class="correct-icon">
-            <div class="row mx-0 mt-5" style="justify-content: center">
-                <div class="next btn-style btn-green start-btn">
-                    下一題
-                </div>
-            </div>
-        </div>
-        <div id="wrong" class="content result-content" style="text-align: center; display: none">
-            <div class="wrong-info correct-info-txt">
-                答錯了哦
-            </div>
-            <div class="result-info-txt my-2"></div>
-            <img src="assets/img/img_wrong.svg" class="wrong-icon">
-            <div class="row mx-0 mt-5" style="justify-content: center">
-                <div class="next btn-style btn-green start-btn">
-                    下一題
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="last" class="form-panel" style="display: none">
-        <div class="form-title" style="display: flex; justify-content: center; align-items: center">
-            <div style="padding: 0 18px">
-                抽獎資料已送出！
-            </div>
-        </div>
-        <div class="last-panel-text">
-            <div class="result-info-txt" style="text-align: center">
-                恭喜您完成本遊戲，我們將於
-            </div>
-            <div class="result-info-txt red" style="text-align: center;">
-                10月12日星期一
-            </div>
-            <div class="result-info-txt" style="text-align: center;">
-                抽出幸運民眾，敬請鎖定環保局網站活動快訊，看看您是否可以將大獎帶回家哦！
-            </div>
-        </div>
-    </div>
-</div>
-
-<script type="text/javascript" src="js/questionList.js"></script>
-<script type="text/javascript" src="js/captcha.js"></script>
-<script type="text/javascript" src="js/checkId.js"></script>
-<script type="text/javascript">
-    let question = {};
-    let correct = 0;
-    const logs = [];
-
-    // $('#title').hide();
-    // $('#main').hide();
-    // $('#form-panel').show();
-    // // $('#last').show();
-    // createCaptcha();
-
-    $('#start').on('click', function (e) {
-        $('.question-panel').addClass('panel-color-orange').removeClass('panel-color-green');
-        $('#instructionBanner').hide();
-        $('#instruction').hide();
-
-        $('#questionBanner').show();
-        $('#question').show();
-
-        $('.hint').css('opacity', 1);
-        question = randomSelect();
-        insertQuestion(question);
-    });
-
-    let select = -1;
-    $('.options').on('click', function (e) {
-        $(this).find('img').attr('src', 'assets/img/img_checkbox_select.svg');
-        $(this).siblings('.options').find('img').attr('src', 'assets/img/img_checkbox.svg');
-        select = $(this).data('content');
-    })
-
-    $('#next').on('click', function (e) {
-        if (select < 0) return;
-        const time = new Date();
-        logs.push({
-            qidx: question.idx,
-            select: select,
-            result: select === question.ans,
-            time: `${time.getFullYear()}-${time.getMonth() + 1}-${time.getDate()} ${time.getHours()}:${time.getMinutes()}`
-        });
-        if (select === question.ans) {
-            $('#question').hide();
-            $('#questionBanner').hide();
-            $('#correct').show();
-            correct += 1;
-            $('#count').html(correct);
-        } else {
-            $('#question').hide();
-            $('#questionBanner').hide();
-            $('#wrong').show();
-            $('#wrong > .result-info-txt').html(question.desc);
-
-            wrongList.push(question);
-        }
-    })
-
-    $('.next').on('click', function (e) {
-        $('#correct').hide();
-        $('#wrong').hide();
-
-        if (correct === 5) {
-            $('#title').hide();
-            $('#main').hide();
-            $('#form-panel').show();
-            createCaptcha();
-        } else {
-            $('#questionBanner').show();
-            $('#question').show();
-
-            $('.options').find('img').attr('src', 'assets/img/img_checkbox.svg');
-            select = -1;
-
-            question = randomSelect();
-            insertQuestion(question);
-        }
-    })
-
-    $('#send').on('click', function () {
-        let validSend = true;
-        $('input').each(function () {
-            if ($(this).attr('name') === 'captcha_txt' && $(this).hasClass('warning')) {
-                createCaptcha();
-            }
-
-            if ($(this).val() === '' && !$(this).hasClass('warning')) {
-                $(this).addClass('warning');
-                $(this).siblings('span').html('*');
-                $(`#${$(this).attr('name')}_error`).show();
-            }
-
-            if ($(this).hasClass('warning')) {
-                validSend = false;
-            }
-        })
-
-        if (validSend) {
-            const payload = $('#form').serialize() + `&log=${JSON.stringify(logs)}`;
-            $.post('/event/submit/', payload, function(data) {
-                if (data.success) {
-                    $('#form-panel').hide();
-                    $('#last').show();
-                } else {
-                    Swal.fire({
-                        text: '此身分證字號已經參加過囉！',
-                        confirmButtonText: '知道了'
-                    });
-                }
-            },'json');
-        }
-    })
-
-    $('input').focus(function () {
-        const name = $(this).attr('name');
-        $(this).removeClass('warning');
-        $(this).siblings('span').html('');
-        $(`#${name}_error`).hide();
-    });
-
-    const regInt = /^[0-9]*$/;
-    $('input').blur(function () {
-        const name = $(this).attr('name');
-        const value = $(this).val();
-        let valid = true;
-        switch (name) {
-            case 'name':
-            case 'address_1':
-            case 'address_2':
-                valid = value !== '';
-                break;
-            case 'pid':
-                valid = checkID(value);
-                break;
-            case 'phone':
-                valid = value !== '' && regInt.test(value);
-                break;
-            case 'captcha_txt':
-                valid = value !== '' && value.toLowerCase() === code.toLowerCase();
-                break;
-            default:
-                break;
-        }
-
-        if (!valid) {
-            $(this).addClass('warning');
-            $(this).siblings('span').html('*');
-            $(`#${name}_error`).show();
-        } else {
-            $(this).removeClass('warning');
-            $(this).siblings('span').html('');
-            $(`#${name}_error`).hide();
-        }
-    })
-
-    function insertQuestion(quz) {
-        $('#question > .question > .txt').html(quz.question);
-        $('#question > * > .options > .txt').each(function (idx, e) {
-            $(e).html(quz.options[idx]);
-        })
-        $('#questionBanner').html(`<img src="assets/img/img_question_${quz.type}.svg" class="banner-img">`)
-    }
-</script>
-
+<noscript><strong>We're sorry but 國營考試通 doesn't work properly without JavaScript enabled. Please enable it to
+  continue.</strong></noscript>
+<div id=app></div>
+<script src=/js/chunk-vendors.7ca3dd95.js></script>
+<script src=/js/index.fb28b574.js></script>
 </body>
 </html>

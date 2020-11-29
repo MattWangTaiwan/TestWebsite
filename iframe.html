@@ -6,10 +6,12 @@
 </head>
 <body>
 <div>Test</div>
-<button onclick="parent.postMessage('I am post message', window.location.href);"></button>
+<button onclick="postHandler()"></button>
 
 <script>
-
+	postHandler() {
+		parent.postMessage('I am post message', window.location.href);
+	}
 </script>
 </body>
 </html>

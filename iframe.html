@@ -10,6 +10,7 @@
 
 <script>
 	function postHandler() {
+		console.log(window.location.origin);
 		parent.postMessage('I am post message', window.location.origin);
 	}
 </script>

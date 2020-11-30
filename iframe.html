@@ -6,13 +6,11 @@
 </head>
 <body>
 <div>Test</div>
-<button onclick="postHandler()"></button>
+<button onclick="parent.postMessage('I am post message', 'https://localhost:8080/');"></button>
+<button onclick="parent.postMessage('I am post message', 'https://facebook.com/');"></button>
 
 <script>
-	function postHandler() {
-		console.log(window.location.origin);
-		parent.postMessage('I am post message', window.location.origin);
-	}
+
 </script>
 </body>
 </html>

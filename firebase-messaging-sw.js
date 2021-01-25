@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.ca337e20f27822f4e0029438da353bfb.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.c65380fb6efa816226d38f32f8475ffa.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.precaching.precacheAndRoute([]);
 
@@ -66,12 +66,15 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage((payload) => {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
-  const notificationTitle = 'Background Message Title';
-  const notificationOptions = {
-    body: 'Background Message body.',
-    icon: '/firebase-logo.png',
-  };
-
-  this.registration.showNotification(notificationTitle, notificationOptions);
+  // const notificationTitle = 'Background Message Title';
+  // const notificationOptions = {
+  //   body: 'Background Message body.',
+  //   icon: '/firebase-logo.png',
+  // };
+  //
+  // this.registration.showNotification(notificationTitle, notificationOptions);
+  this.registration.showNotification(payload.notification.NotifSubject, {
+    body: payload.notification.NotifContent,
+  });
 });
 

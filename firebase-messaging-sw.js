@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.8756650be01d5bd12705833f93b4e588.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.7d9b9970d74937920e0f0a460eabdf79.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.precaching.precacheAndRoute([]);
 
@@ -45,8 +45,8 @@ workbox.routing.registerRoute(
 // }
 // BBfrcboJrsdfhanxzx911pUgadG30bKf392lxjilLJ49_1bndzIAO53EvHJLcRDC-xIg_Sv2ofViIDHNLgjkEP8
 
-importScripts('https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.2.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js');
+importScripts('https://www.gstatic.com/firebasejs/8.6.1/firebase-messaging.js');
 
 // const firebaseConfig = {
 //   apiKey: 'AIzaSyBiSa4HCAVAXV3eQHnpd3BZ1DiFgb1t_54',

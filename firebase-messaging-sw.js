@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.eddbfaf025f6c7eaa81318d42be2b8aa.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.f2d7033637a76c6e8c3d717eaf3feafc.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.precaching.precacheAndRoute([]);
 
@@ -76,7 +76,7 @@ messaging.onBackgroundMessage((payload) => {
 self.addEventListener('notificationclick', (event) => {
   console.log(event);
   if (event.action === "click") {
-    clients.openWindow(`https://mattwangtaiwan.github.io/#/`);
+    clients.openWindow(`https://mattwangtaiwan.github.io/#/notification/main`);
   } else if (event.action === "close") {
       clients.openWindow(`https://rainmakerho.github.io/`);
   };

@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.af5fccbb5bdae084ed0cd08d0b69cddb.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("/precache-manifest.a5c52249f333711ff3ee8610b53e8a03.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 workbox.precaching.precacheAndRoute([]);
 
@@ -75,7 +75,7 @@ messaging.onBackgroundMessage((payload) => {
 
 self.addEventListener('notificationclick', (event) => {
   console.log(event);
-  if (event.action === "search") {
+  if (event.action === "click") {
     clients.openWindow(`https://github.com/rainmakerho`);
   } else if (event.action === "close") {
       clients.openWindow(`https://rainmakerho.github.io/`);

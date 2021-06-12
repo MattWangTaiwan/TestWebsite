@@ -74,5 +74,10 @@ messaging.onBackgroundMessage((payload) => {
 });
 
 self.addEventListener('notificationclick', (event) => {
-  console.log('notificationclick');
+  console.log(event);
+  if (event.action === "search") {
+    clients.openWindow(`https://github.com/rainmakerho`);
+  } else if (event.action === "close") {
+      clients.openWindow(`https://rainmakerho.github.io/`);
+  };
 });

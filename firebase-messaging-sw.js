@@ -73,3 +73,6 @@ messaging.onBackgroundMessage((payload) => {
   });
 });
 
+self.addEventListener('notificationclick', (event) => {
+  console.log('notificationclick');
+});
